@@ -4,15 +4,27 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    // Start is called before the first frame update
+    [SerializeField] private GameObject arm;
+    [SerializeField] private GameObject leg; 
+
     void Start()
     {
         
     }
 
-    // Update is called once per frame
+
     void Update()
+    {
+        if (Input.GetKey(KeyCode.LeftControl))
+        {
+            
+        }
+    }
+
+    
+    public void Stunned(GameObject target, int duration)
     {
         
     }
+    
 }
