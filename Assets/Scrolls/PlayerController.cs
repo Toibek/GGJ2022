@@ -6,6 +6,8 @@ public class PlayerController : MonoBehaviour
 {
     [SerializeField] private GameObject arm;
     [SerializeField] private GameObject leg; 
+    
+    public float 
 
     void Start()
     {
@@ -22,7 +24,7 @@ public class PlayerController : MonoBehaviour
     }
 
     
-    public void Stunned(GameObject target, int duration)
+    public void Stun(PlayerController other, GameObject target, int duration)
     {
         
     }
