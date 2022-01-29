@@ -1,10 +1,11 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CharacterController : MonoBehaviour
+public class MCController : MonoBehaviour
 {
-    public static CharacterController Instance;
+    public static MCController Instance;
     #region Singleton
     private void Awake()
     {
@@ -21,4 +22,10 @@ public class CharacterController : MonoBehaviour
     #endregion
 
 
+    void GameOver()
+    {
+        string corpsePosition = gameObject.transform.position.ToString();
+        GameManager.Instance.UpdateCorpse(corpsePosition); 
+
+    }
 }
