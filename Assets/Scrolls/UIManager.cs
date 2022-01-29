@@ -61,14 +61,15 @@ public class UIManager : MonoBehaviour
 
         if (healthBar.fillAmount < 0.3f) healthBar.color = lowHealth;
 
-        if (healthBar.fillAmount < 0.6f) healthBar.color = mediumHealth; 
+        else if (healthBar.fillAmount < 0.6f) healthBar.color = mediumHealth; 
 
-        if (healthBar.fillAmount > 0.6f) healthBar.color = goodHealth; 
+        else if (healthBar.fillAmount > 0.6f) healthBar.color = goodHealth; 
     }
 
     public void GameOver()
     {
         gameOverPanel.enabled = true; 
+        
         
     }
 

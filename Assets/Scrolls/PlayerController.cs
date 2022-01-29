@@ -6,8 +6,14 @@ using UnityEngine.InputSystem;
 public class PlayerController : MonoBehaviour
 {
     [SerializeField] private GameObject arm;
-    [SerializeField] private GameObject leg; 
+    [SerializeField] private GameObject leg;
+    [SerializeField] private PlayerController otherPlayer;
 
+    public bool ArmIsStunned = false;
+    public bool LegIsStunned = false;
+
+    private float armCooldown;
+    private float legCooldown; 
     void Start()
     {
         
@@ -22,10 +28,14 @@ public class PlayerController : MonoBehaviour
 
     public void Stunned(GameObject target, int duration)
     {
+        
     }
     public void Move(InputAction.CallbackContext context)
     {
-
+        if (LegIsStunned == false)
+        {
+            
+        }
     }
     public void Action1(InputAction.CallbackContext context)
     {
