@@ -1,12 +1,18 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
 public class MCController : MonoBehaviour
 {
     public static MCController Instance;
+    [SerializeField] private int health;
+    private int maxHealth;
+
+    [SerializeField] private TextMeshProUGUI mcText;
+    public bool isConfused = false; 
     #region Singleton
     private void Awake()
     {
@@ -14,6 +20,9 @@ public class MCController : MonoBehaviour
             Instance = this;
         else
             Destroy(this);
+
+        maxHealth = health;
+        mcText.enabled = false; 
     }
     private void OnDestroy()
     {
@@ -21,15 +30,6 @@ public class MCController : MonoBehaviour
             Instance = null;
     }
     #endregion
-
-    [SerializeField] private int health;
-    private int maxHealth;
-
-
-    private void Start()
-    {
-        maxHealth = health; 
-    }
 
     private void Update()
     {
@@ -43,8 +43,6 @@ public class MCController : MonoBehaviour
         health -= damage;
         UIManager.Instance.UpdateHealth((float) health / maxHealth); 
         if (health <= 0) GameOver();
-        
-        
     }
     
     public void IncreaseHealth(int boost)
@@ -54,6 +52,11 @@ public class MCController : MonoBehaviour
             health += boost; 
         }
         UIManager.Instance.UpdateHealth((float)health / maxHealth);
+    }
+
+    public void Confused()
+    {
+        mcText.enabled = true;
     }
 
     private void GameOver()
