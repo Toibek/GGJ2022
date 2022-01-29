@@ -68,11 +68,13 @@ public class GameManager : MonoBehaviour
 
     private void LoadCorpses()
     {
+        corpsePositions = new List<Vector2>();
         for (int i = 0; i < corpseCount ; i++)
         {
             string corpseData =  PlayerPrefs.GetString($"Corpse{(i + 1).ToString()}");
             string[] corpseVec = corpseData.Substring(1, corpseData.Length - 2).Split(',');
             Vector2 corpsePosition = new Vector2(float.Parse(corpseVec[0]), float.Parse(corpseVec[1])); 
+            corpsePositions.Add(corpsePosition);
         }
     }
     
