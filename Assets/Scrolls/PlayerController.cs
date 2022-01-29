@@ -7,6 +7,8 @@ public class PlayerController : MonoBehaviour
 {
     [SerializeField] private GameObject arm;
     [SerializeField] private GameObject leg; 
+    
+    public float 
 
     void Start()
     {
