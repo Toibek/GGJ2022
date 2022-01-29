@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -6,7 +7,6 @@ using UnityEngine.UI;
 public class UIManager : MonoBehaviour
 {
     private static UIManager instance = null;
-
     public static UIManager Instance
     {
         get
@@ -26,7 +26,20 @@ public class UIManager : MonoBehaviour
             return instance; 
         }
     }
-    [SerializeField] private Image healthBar; 
+    
+    [Header("Health Bar")]
+    [SerializeField] private Image healthBar;
+
+    [SerializeField] private Color32 goodHealth;
+    [SerializeField] private Color32 mediumHealth;
+    [SerializeField] private Color32 lowHealth;
+
+    [Header("Panels")] 
+    [SerializeField] private Canvas pauseMenu;
+
+    [SerializeField] private Canvas gameOverPanel; 
+    
+    
 
     void Awake()
     {
@@ -40,9 +53,27 @@ public class UIManager : MonoBehaviour
             Destroy(gameObject);
         }
     }
-    
+
+
     public void UpdateHealth(float newValue)
     {
         healthBar.fillAmount = newValue;
+
+        if (healthBar.fillAmount < 0.3f) healthBar.color = lowHealth;
+
+        if (healthBar.fillAmount < 0.6f) healthBar.color = mediumHealth; 
+
+        if (healthBar.fillAmount > 0.6f) healthBar.color = goodHealth; 
+    }
+
+    public void GameOver()
+    {
+        gameOverPanel.enabled = true; 
+        
+    }
+
+    public void GamePause()
+    {
+        
     }
 }
