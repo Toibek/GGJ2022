@@ -1,11 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class InputManager : MonoBehaviour
 {
-    private void Start()
+    public void PlayerJoined(PlayerInput input)
     {
+        input.defaultControlScheme = input.currentControlScheme;
+        Debug.Log(input.currentControlScheme);
 
     }
 }

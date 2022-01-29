@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour
 {
@@ -15,16 +16,35 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKey(KeyCode.LeftControl))
-        {
-            
-        }
-    }
 
+    }
     
+
     public void Stunned(GameObject target, int duration)
     {
-        
     }
-    
+    public void Move(InputAction.CallbackContext context)
+    {
+
+    }
+    public void Action1(InputAction.CallbackContext context)
+    {
+
+    }
+    public void Action2(InputAction.CallbackContext context) 
+    {
+
+    }
+    public void Action3(InputAction.CallbackContext context) 
+    {
+
+    }
+    public void Action4(InputAction.CallbackContext context) 
+    {
+
+    }
+    public void Join(InputAction.CallbackContext context) 
+    {
+
+    }
 }
