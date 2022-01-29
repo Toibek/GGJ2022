@@ -74,6 +74,17 @@ public class UIManager : MonoBehaviour
 
     public void GamePause()
     {
+        if (pauseMenu.enabled == false)
+        {
+            pauseMenu.enabled = true;
+            Time.timeScale = 0f;
+        } 
         
+        else if (pauseMenu.enabled == true)
+        {
+            pauseMenu.enabled = false; 
+            Time.timeScale = 1f; 
+            
+        }
     }
 }
