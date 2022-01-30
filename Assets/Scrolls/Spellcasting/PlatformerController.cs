@@ -2,14 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CharacterManager : MonoBehaviour
+public class PlatformerController : MonoBehaviour
 {
-    [SerializeField] GameObject rightLeg;
-    [SerializeField] GameObject leftLeg;
-    [Space]
-    [SerializeField] GameObject rightArm;
-    [SerializeField] GameObject leftArm;
-    public static CharacterManager Instance;
+    public GameObject Character;
+    Transform charTrans;
+    Rigidbody2D charRb;
+    Animator CharAnim;
+
+    public static PlatformerController Instance;
     #region Singleton
     private void Awake()
     {
@@ -37,19 +37,12 @@ public class CharacterManager : MonoBehaviour
         }
         return false;
     }
-    public GameObject Leg(PlayerController cont)
+
+    private void Start()
     {
-        if (Players[0] == cont)
-            return rightLeg;
-        else
-            return leftLeg;
-    }
-    public GameObject Arm(PlayerController cont)
-    {
-        if (Players[0] == cont)
-            return rightArm;
-        else
-            return leftArm;
+        charTrans = Character.transform;
+        charRb = Character.GetComponent<Rigidbody2D>();
+        CharAnim = Character.GetComponent<Animator>();
     }
 
 }
