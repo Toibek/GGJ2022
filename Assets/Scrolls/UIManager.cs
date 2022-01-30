@@ -37,9 +37,8 @@ public class UIManager : MonoBehaviour
     [Header("Panels")] 
     [SerializeField] private Canvas pauseMenu;
     [SerializeField] private Canvas gameOverPanel; 
-    
-    
-
+   
+   
     void Awake()
     {
         if (instance == null)
