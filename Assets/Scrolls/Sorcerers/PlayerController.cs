@@ -5,6 +5,9 @@ using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour
 {
+    public Vector2 Movement;
+
+
     [SerializeField] private GameObject arm;
     [SerializeField] private GameObject leg;
     [SerializeField] private float hingeSpeed;
@@ -24,22 +27,24 @@ public class PlayerController : MonoBehaviour
     private float legCooldown; 
     void Start()
     {
-        if (CharacterManager.Instance.addController(this) == false)
+        if (CharacterManager.Instance != null && CharacterManager.Instance.addController(this) == false)
             Destroy(gameObject);
-        leg = CharacterManager.Instance.Leg(this);
-        legHinge = leg.GetComponentInChildren<HingeJoint2D>();
-        legSlide = leg.GetComponentInChildren<SliderJoint2D>();
+        else if (PlatformerController.Instance != null && PlatformerController.Instance.addController(this) == false)
+            Destroy(gameObject);
+        else if (CharacterManager.Instance == null && PlatformerController.Instance == null)
+            Debug.LogWarning("No applicable gamemode managers");
 
-        arm = CharacterManager.Instance.Arm(this);
-        HingeJoint2D[] armHinges = arm.GetComponentsInChildren<HingeJoint2D>();
-        armHinge1 = armHinges[0];
-        armHinge2 = armHinges[1];
-    }
+        if (CharacterManager.Instance != null)
+        {
+            leg = CharacterManager.Instance.Leg(this);
+            legHinge = leg.GetComponentInChildren<HingeJoint2D>();
+            legSlide = leg.GetComponentInChildren<SliderJoint2D>();
 
-
-    void Update()
-    {
-
+            arm = CharacterManager.Instance.Arm(this);
+            HingeJoint2D[] armHinges = arm.GetComponentsInChildren<HingeJoint2D>();
+            armHinge1 = armHinges[0];
+            armHinge2 = armHinges[1];
+        }
     }
 
 
@@ -68,12 +73,20 @@ public class PlayerController : MonoBehaviour
                     slideMotor.motorSpeed = mov.y * slideSpeed;
                     legSlide.motor = slideMotor;
                 }
+                if(PlatformerController.Instance != null)
+                {
+                    Movement = (Vector2)context.ReadValueAsObject();
+                }
                 break;
             case InputActionPhase.Canceled:
                 if (leg != null)
                 {
                     legSlide.useMotor = false;
                     legHinge.useMotor = false;
+                }
+                if (PlatformerController.Instance != null)
+                {
+                    Movement = Vector2.zero;
                 }
                 break;
             case InputActionPhase.Disabled:
