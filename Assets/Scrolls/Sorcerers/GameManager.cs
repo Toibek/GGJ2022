@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
@@ -28,7 +29,8 @@ public class GameManager : MonoBehaviour
     [SerializeField] private List<Vector2> corpsePositions = new List<Vector2>();
     [SerializeField] private Vector2 testPosition; 
     [SerializeField] private bool saveTrigger = false;
-    [SerializeField] private bool loadTrigger = false; 
+    [SerializeField] private bool loadTrigger = false;
+    [SerializeField] private GameObject corpsePrefab; 
     
     private int corpseCount;
 
@@ -48,6 +50,7 @@ public class GameManager : MonoBehaviour
     private void Start()
     {
         corpseCount = PlayerPrefs.GetInt("CorpseCount"); 
+        LoadCorpses();
     }
 
     private void Update()
@@ -75,6 +78,9 @@ public class GameManager : MonoBehaviour
             string[] corpseVec = corpseData.Substring(1, corpseData.Length - 2).Split(',');
             Vector2 corpsePosition = new Vector2(float.Parse(corpseVec[0]), float.Parse(corpseVec[1])); 
             corpsePositions.Add(corpsePosition);
+
+            Instantiate(corpsePrefab, corpsePosition, Quaternion.identity);
+            corpsePrefab.GetComponent<TextMeshProUGUI>().text = $"No. {i + 1}"; 
         }
     }
     
