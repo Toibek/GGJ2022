@@ -6,9 +6,17 @@
             "id": "063483f7-f04d-423a-a391-c466c6f1fc24",
             "actions": [
                 {
-                    "name": "Move",
+                    "name": "Move 1",
                     "type": "Value",
                     "id": "58755f2e-5207-44a1-9c2d-65c1c33b0886",
+                    "expectedControlType": "Vector2",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "Move 2",
+                    "type": "Value",
+                    "id": "8ebb892f-b168-4a9c-99dc-1e582f3c3465",
                     "expectedControlType": "Vector2",
                     "processors": "",
                     "interactions": ""
@@ -62,7 +70,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": ";Gamepad",
-                    "action": "Move",
+                    "action": "Move 1",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -73,7 +81,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Move",
+                    "action": "Move 1",
                     "isComposite": true,
                     "isPartOfComposite": false
                 },
@@ -84,7 +92,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": ";Keyboard",
-                    "action": "Move",
+                    "action": "Move 1",
                     "isComposite": false,
                     "isPartOfComposite": true
                 },
@@ -95,7 +103,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": ";Keyboard",
-                    "action": "Move",
+                    "action": "Move 1",
                     "isComposite": false,
                     "isPartOfComposite": true
                 },
@@ -106,7 +114,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": ";Keyboard",
-                    "action": "Move",
+                    "action": "Move 1",
                     "isComposite": false,
                     "isPartOfComposite": true
                 },
@@ -117,7 +125,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": ";Keyboard",
-                    "action": "Move",
+                    "action": "Move 1",
                     "isComposite": false,
                     "isPartOfComposite": true
                 },
@@ -128,7 +136,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": ";Keyboard",
-                    "action": "Move",
+                    "action": "Move 1",
                     "isComposite": false,
                     "isPartOfComposite": true
                 },
@@ -139,7 +147,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": ";Keyboard",
-                    "action": "Move",
+                    "action": "Move 1",
                     "isComposite": false,
                     "isPartOfComposite": true
                 },
@@ -150,7 +158,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": ";Keyboard",
-                    "action": "Move",
+                    "action": "Move 1",
                     "isComposite": false,
                     "isPartOfComposite": true
                 },
@@ -161,7 +169,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": ";Keyboard",
-                    "action": "Move",
+                    "action": "Move 1",
                     "isComposite": false,
                     "isPartOfComposite": true
                 },
@@ -272,6 +280,72 @@
                     "processors": "",
                     "groups": "Gamepad",
                     "action": "Join",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "Arrows",
+                    "id": "cd550098-472f-4801-a818-6a17b7261eb6",
+                    "path": "2DVector",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Move 2",
+                    "isComposite": true,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "up",
+                    "id": "c4e6dd9e-f403-4e52-b674-15761f77368b",
+                    "path": "<Keyboard>/upArrow",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Move 2",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "down",
+                    "id": "33eb07a6-b4d9-4934-883e-9d301c439a3b",
+                    "path": "<Keyboard>/downArrow",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Move 2",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "left",
+                    "id": "fcf519f0-eb80-483e-80f1-10a20bc2366f",
+                    "path": "<Keyboard>/leftArrow",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Move 2",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "right",
+                    "id": "02f6aaf4-db88-44e6-8994-860b4618bc08",
+                    "path": "<Keyboard>/rightArrow",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Move 2",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "",
+                    "id": "8dcf13a7-6333-4ca8-8c16-05d83ab749f2",
+                    "path": "<Gamepad>/rightStick",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Gamepad",
+                    "action": "Move 2",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
