@@ -4,10 +4,16 @@ using UnityEngine;
 
 public class PlatformerController : MonoBehaviour
 {
-    public GameObject Character;
+    [SerializeField] GameObject prefabCharacter;
+    [SerializeField] float movSpeed;
+    [SerializeField] float jumpForce;
+
+    Transform spawnpoint;
+    GameObject Character;
     Transform charTrans;
     Rigidbody2D charRb;
     Animator CharAnim;
+    GroundCheck charGround;
 
     public static PlatformerController Instance;
     #region Singleton
@@ -40,9 +46,30 @@ public class PlatformerController : MonoBehaviour
 
     private void Start()
     {
+        spawnpoint = GameObject.Find("Spawnpoint").transform;
+        spawnCharacter();
+    }
+    void spawnCharacter()
+    {
+        Character = Instantiate(prefabCharacter, spawnpoint.position, Quaternion.identity);
         charTrans = Character.transform;
         charRb = Character.GetComponent<Rigidbody2D>();
         CharAnim = Character.GetComponent<Animator>();
+        charGround = Character.GetComponent<GroundCheck>();
     }
+    private void Update()
+    {
+        HandleMovement();
+    }
+    private void HandleMovement()
+    {
+        if (Players[0] && Players[1])
+        {
+            Vector2 totalMovement = (Players[0].Movement + Players[1].Movement).normalized;
+            charRb.velocity = new Vector2(totalMovement.x * movSpeed,charRb.velocity.y);
+            if (totalMovement.y > 0.5f && charGround.Grounded)
+                charRb.velocity = new Vector2(charRb.velocity.x, jumpForce);
 
+        }
+    }
 }
