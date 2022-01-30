@@ -15,6 +15,13 @@ public class PlayerController : MonoBehaviour
 
     HingeJoint2D armHinge1;
     HingeJoint2D armHinge2;
+    [SerializeField] private PlayerController otherPlayer;
+
+    public bool ArmIsStunned = false;
+    public bool LegIsStunned = false;
+
+    private float armCooldown;
+    private float legCooldown; 
     void Start()
     {
         if (CharacterManager.Instance.addController(this) == false)

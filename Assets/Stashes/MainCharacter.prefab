@@ -903,10 +903,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 157100475533353661}
-  - component: {fileID: 157100475533353658}
-  - component: {fileID: 620452286}
-  - component: {fileID: 620452287}
-  - component: {fileID: 620452285}
+  - component: {fileID: 4218145553759125607}
   m_Layer: 0
   m_Name: MainCharacter
   m_TagString: Untagged
@@ -936,58 +933,7 @@ RectTransform:
   m_AnchoredPosition: {x: -0.108, y: 1.912}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &157100475533353658
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 157100475533353660}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 300d0f02928813b40a5162d230ce3d9a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Health: 10
-  maxHealth: 0
---- !u!50 &620452286
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 157100475533353660}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 1
-  m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
---- !u!70 &620452287
-CapsuleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 157100475533353660}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -1.2}
-  m_Size: {x: 1.93, y: 4.5}
-  m_Direction: 0
---- !u!114 &620452285
+--- !u!114 &4218145553759125607
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -999,6 +945,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 65b18f1e987150941836ecfff7ba6988, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  health: 0
 --- !u!1 &157100475541336512
 GameObject:
   m_ObjectHideFlags: 0
