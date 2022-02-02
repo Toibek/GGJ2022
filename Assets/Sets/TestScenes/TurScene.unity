@@ -209,9 +209,9 @@ MonoBehaviour:
   m_PlayerJoinedEvent:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 687049754}
-        m_TargetAssemblyTypeName: InputManager, Assembly-CSharp
-        m_MethodName: PlayerJoined
+      - m_Target: {fileID: 578946481}
+        m_TargetAssemblyTypeName: PlatformerController, Assembly-CSharp
+        m_MethodName: addController
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -234,6 +234,7 @@ MonoBehaviour:
       m_Processors: 
       m_Interactions: 
       m_SingletonActionBindings: []
+      m_Flags: 0
     m_Reference: {fileID: 1955297039267174424, guid: 27c12d3c87090dd4999eb85ff587df7b, type: 3}
   m_PlayerPrefab: {fileID: 6541710873714625730, guid: 2080cbea65f86a646a7ba781d35d6240, type: 3}
   m_SplitScreen: 0

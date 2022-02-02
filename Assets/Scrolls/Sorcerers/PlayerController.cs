@@ -27,12 +27,12 @@ public class PlayerController : MonoBehaviour
     private float legCooldown; 
     void Start()
     {
-        if (CharacterManager.Instance != null && CharacterManager.Instance.addController(this) == false)
-            Destroy(gameObject);
-        else if (PlatformerController.Instance != null && PlatformerController.Instance.addController(this) == false)
-            Destroy(gameObject);
-        else if (CharacterManager.Instance == null && PlatformerController.Instance == null)
-            Debug.LogWarning("No applicable gamemode managers");
+        //if (CharacterManager.Instance != null && CharacterManager.Instance.addController(this) == false)
+        //    Destroy(gameObject);
+        //else if (PlatformerController.Instance != null && PlatformerController.Instance.addController(this) == false)
+        //    Destroy(gameObject);
+        //else if (CharacterManager.Instance == null && PlatformerController.Instance == null)
+        //    Debug.LogWarning("No applicable gamemode managers");
 
         if (CharacterManager.Instance != null)
         {
